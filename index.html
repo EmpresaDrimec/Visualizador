@@ -12,6 +12,7 @@
       margin: 0;
       padding: 20px;
       background-color: #f0f0f0;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .header {
@@ -116,6 +117,28 @@
     .container.active {
       display: block;
     }
+
+    /* Estilos para modo oscuro */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .sensor-card {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode .indicator {
+      background-color: #333;
+    }
+
+    body.dark-mode .bar {
+      background-color: #64ffda;
+    }
+
+    body.dark-mode .sensor-details {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -132,7 +155,6 @@
     <button onclick="showContainer('container1')">Contenedor 1</button>
     <button onclick="showContainer('container2')">Contenedor 2</button>
     <button onclick="showContainer('container3')">Contenedor 3</button>
-    <button onclick="addContainer()">Añadir Contenedor</button>
   </div>
 
   <!-- Contenedor 1 -->
@@ -223,8 +245,6 @@
           <p>Última actualización: 12:30 PM</p>
         </div>
       </div>
-
-      <!-- Más tarjetas de sensores para el Contenedor 1 -->
     </div>
   </div>
 
@@ -233,6 +253,97 @@
     <h2>Contenedor 2</h2>
     <div class="sensor-grid">
       <!-- Datos de sensores para el Contenedor 2 -->
+      <div class="sensor-card celeste">
+        <i class="fas fa-temperature-high" style="font-size: 48px;"></i>
+        <h3>Temperatura</h3>
+        <p>28°C</p>
+        <div class="indicator">
+          <div class="bar" style="width: 28%;"></div>
+        </div>
+        <p class="indicator-text">28%</p>
+        <div class="sensor-details">
+          <p>Sensor de temperatura</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+
+      <div class="sensor-card verde">
+        <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
+        <h3>Humedad</h3>
+        <p>50%</p>
+        <div class="indicator">
+          <div class="bar" style="width: 50%;"></div>
+        </div>
+        <p class="indicator-text">50%</p>
+        <div class="sensor-details">
+          <p>Sensor de humedad</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+
+      <div class="sensor-card rojo">
+        <i class="fas fa-fire" style="font-size: 48px;"></i>
+        <h3>Detector de Fuego</h3>
+        <p>Desactivado</p>
+        <div class="indicator">
+          <div class="bar" style="width: 0%;"></div>
+        </div>
+        <p class="indicator-text">0%</p>
+        <div class="sensor-details">
+          <p>Detector de llama</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+
+      <div class="sensor-card azul">
+        <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
+        <h3>Volumen</h3>
+        <p>85%</p>
+        <div class="indicator">
+          <div class="bar" style="width: 85%;"></div>
+        </div>
+        <p class="indicator-text">85%</p>
+        <div class="sensor-details">
+          <p>Sensor de volumen</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+
+      <div class="sensor-card celeste">
+        <i class="fas fa-globe" style="font-size: 48px;"></i>
+        <h3>Latitud</h3>
+        <p>45.67°</p>
+        <div class="indicator">
+          <div class="bar" style="width: 75%;"></div>
+        </div>
+        <p class="indicator-text">75%</p>
+        <div class="sensor-details">
+          <p>Sensor de latitud</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+
+      <div class="sensor-card celeste">
+        <i class="fas fa-globe" style="font-size: 48px;"></i>
+        <h3>Longitud</h3>
+        <p>76.54°</p>
+        <div class="indicator">
+          <div class="bar" style="width: 75%;"></div>
+        </div>
+        <p class="indicator-text">75%</p>
+        <div class="sensor-details">
+          <p>Sensor de longitud</p>
+          <p>Última actualización: 12:30 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor 3 -->
+  <div id="container3" class="container">
+    <h2>Contenedor 3</h2>
+    <div class="sensor-grid">
+      <!-- Datos de sensores para el Contenedor 3 -->
       <div class="sensor-card celeste">
         <i class="fas fa-temperature-high" style="font-size: 48px;"></i>
         <h3>Temperatura</h3>
@@ -264,99 +375,6 @@
       <div class="sensor-card rojo">
         <i class="fas fa-fire" style="font-size: 48px;"></i>
         <h3>Detector de Fuego</h3>
-        <p>Desactivado</p>
-        <div class="indicator">
-          <div class="bar" style="width: 0%;"></div>
-        </div>
-        <p class="indicator-text">0%</p>
-        <div class="sensor-details">
-          <p>Detector de llama</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <div class="sensor-card azul">
-        <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
-        <h3>Volumen</h3>
-        <p>50%</p>
-        <div class="indicator">
-          <div class="bar" style="width: 50%;"></div>
-        </div>
-        <p class="indicator-text">50%</p>
-        <div class="sensor-details">
-          <p>Sensor de volumen</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <div class="sensor-card celeste">
-        <i class="fas fa-globe" style="font-size: 48px;"></i>
-        <h3>Latitud</h3>
-        <p>11.22°</p>
-        <div class="indicator">
-          <div class="bar" style="width: 55%;"></div>
-        </div>
-        <p class="indicator-text">55%</p>
-        <div class="sensor-details">
-          <p>Sensor de latitud</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <div class="sensor-card celeste">
-        <i class="fas fa-globe" style="font-size: 48px;"></i>
-        <h3>Longitud</h3>
-        <p>97.65°</p>
-        <div class="indicator">
-          <div class="bar" style="width: 55%;"></div>
-        </div>
-        <p class="indicator-text">55%</p>
-        <div class="sensor-details">
-          <p>Sensor de longitud</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <!-- Más tarjetas de sensores para el Contenedor 2 -->
-    </div>
-  </div>
-
-  <!-- Contenedor 3 -->
-  <div id="container3" class="container">
-    <h2>Contenedor 3</h2>
-    <div class="sensor-grid">
-      <!-- Datos de sensores para el Contenedor 3 -->
-      <div class="sensor-card celeste">
-        <i class="fas fa-temperature-high" style="font-size: 48px;"></i>
-        <h3>Temperatura</h3>
-        <p>30°C</p>
-        <div class="indicator">
-          <div class="bar" style="width: 30%;"></div>
-        </div>
-        <p class="indicator-text">30%</p>
-        <div class="sensor-details">
-          <p>Sensor de temperatura</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <div class="sensor-card verde">
-        <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
-        <h3>Humedad</h3>
-        <p>70%</p>
-        <div class="indicator">
-          <div class="bar" style="width: 70%;"></div>
-        </div>
-        <p class="indicator-text">70%</p>
-        <div class="sensor-details">
-          <p>Sensor de humedad</p>
-          <p>Última actualización: 12:30 PM</p>
-        </div>
-      </div>
-
-      <div class="sensor-card rojo">
-        <i class="fas fa-fire" style="font-size: 48px;"></i>
-        <h3>Detector de Fuego</h3>
         <p>Activado</p>
         <div class="indicator">
           <div class="bar" style="width: 100%;"></div>
@@ -371,11 +389,11 @@
       <div class="sensor-card azul">
         <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
         <h3>Volumen</h3>
-        <p>80%</p>
+        <p>70%</p>
         <div class="indicator">
-          <div class="bar" style="width: 80%;"></div>
+          <div class="bar" style="width: 70%;"></div>
         </div>
-        <p class="indicator-text">80%</p>
+        <p class="indicator-text">70%</p>
         <div class="sensor-details">
           <p>Sensor de volumen</p>
           <p>Última actualización: 12:30 PM</p>
@@ -385,7 +403,7 @@
       <div class="sensor-card celeste">
         <i class="fas fa-globe" style="font-size: 48px;"></i>
         <h3>Latitud</h3>
-        <p>13.45°</p>
+        <p>34.56°</p>
         <div class="indicator">
           <div class="bar" style="width: 65%;"></div>
         </div>
@@ -399,7 +417,7 @@
       <div class="sensor-card celeste">
         <i class="fas fa-globe" style="font-size: 48px;"></i>
         <h3>Longitud</h3>
-        <p>99.87°</p>
+        <p>87.65°</p>
         <div class="indicator">
           <div class="bar" style="width: 65%;"></div>
         </div>
@@ -409,115 +427,22 @@
           <p>Última actualización: 12:30 PM</p>
         </div>
       </div>
-
-      <!-- Más tarjetas de sensores para el Contenedor 3 -->
     </div>
   </div>
 
   <script>
     function showContainer(containerId) {
-      document.querySelectorAll('.container').forEach(function(container) {
+      document.querySelectorAll('.container').forEach(container => {
         container.classList.remove('active');
       });
       document.getElementById(containerId).classList.add('active');
     }
 
-    function addContainer() {
-      const containerCount = document.querySelectorAll('.container').length;
-      const newContainerId = `container${containerCount + 1}`;
-      const newContainer = document.createElement('div');
-      newContainer.id = newContainerId;
-      newContainer.className = 'container';
-      newContainer.innerHTML = `
-        <h2>Contenedor ${containerCount + 1}</h2>
-        <div class="sensor-grid">
-          <div class="sensor-card celeste">
-            <i class="fas fa-temperature-high" style="font-size: 48px;"></i>
-            <h3>Temperatura</h3>
-            <p>--°C</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Sensor de temperatura</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-
-          <div class="sensor-card verde">
-            <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
-            <h3>Humedad</h3>
-            <p>--%</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Sensor de humedad</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-
-          <div class="sensor-card rojo">
-            <i class="fas fa-fire" style="font-size: 48px;"></i>
-            <h3>Detector de Fuego</h3>
-            <p>--</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Detector de llama</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-
-          <div class="sensor-card azul">
-            <i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>
-            <h3>Volumen</h3>
-            <p>--%</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Sensor de volumen</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-
-          <div class="sensor-card celeste">
-            <i class="fas fa-globe" style="font-size: 48px;"></i>
-            <h3>Latitud</h3>
-            <p>--°</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Sensor de latitud</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-
-          <div class="sensor-card celeste">
-            <i class="fas fa-globe" style="font-size: 48px;"></i>
-            <h3>Longitud</h3>
-            <p>--°</p>
-            <div class="indicator">
-              <div class="bar" style="width: 0%;"></div>
-            </div>
-            <p class="indicator-text">--%</p>
-            <div class="sensor-details">
-              <p>Sensor de longitud</p>
-              <p>Última actualización: --</p>
-            </div>
-          </div>
-        </div>
-      `;
-      document.querySelector('.container-grid').appendChild(newContainer);
-    }
+    document.getElementById('toggleDarkMode').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      this.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
   </script>
 </body>
 </html>
